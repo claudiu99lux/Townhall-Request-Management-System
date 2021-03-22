@@ -1,25 +1,14 @@
-package entity;
+package dto;
 
-import javax.persistence.*;
 
-@Entity
-@DiscriminatorValue("2")
-public class ApartmentAddress extends Address{
 
-    @Column
+public class ApartmentAddressDto extends AddressDto{
+
     private int floor;
-
-    @Column
     private int apartmentNumber;
 
-    public ApartmentAddress(String street, String number, int floor, int apartmentNumber){
-        super(2, street, number);
-        this.floor = floor;
-        this.apartmentNumber = apartmentNumber;
-    }
-
-    public ApartmentAddress() {
-
+    public ApartmentAddressDto(){
+        super();
     }
 
     public int getFloor() {

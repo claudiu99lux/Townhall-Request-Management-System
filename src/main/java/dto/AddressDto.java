@@ -1,40 +1,18 @@
-package entity;
+package dto;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import entity.User;
+
 import java.util.UUID;
 
-@Entity
-@Table(name = "address")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(
-        name = "buildingType",
-        discriminatorType = DiscriminatorType.INTEGER)
-public abstract class Address {
-    @Id
+public abstract class AddressDto {
     private String id;
-
-    @Column(name="buildingType", insertable = false, updatable = false)
     private int buildingType; //1 = house, 2 = apartment building
-
-    @Column
     private String street;
-
-    @Column
     private String number; //String because number can be 102A
-
-    @ManyToOne
-    @JoinColumn(name="owner_id")
     private User user;
 
-    public Address(){}
-
-    public Address(int buildingType, String street, String number){
+    public AddressDto(){
         this.id = UUID.randomUUID().toString();
-        this.buildingType = buildingType;
-        this.street = street;
-        this.number = number;
     }
 
     public String getId() {

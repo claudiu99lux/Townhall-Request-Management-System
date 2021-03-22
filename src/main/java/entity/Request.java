@@ -4,13 +4,14 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "requests")
+@Table(name = "request")
 public class Request {
     @Id
     private String id;
 
-    @Column
-    private int type;
+    @OneToOne
+    @JoinColumn(name="request_type")
+    private RequestType type;
 
     @Column
     private int approved;
@@ -22,12 +23,12 @@ public class Request {
     private LocalDate date;
 
     @ManyToOne
-    @JoinColumn(name = "owner_combo_id")
-    private UserAddress owner;
+    @JoinColumn(name = "address_id")
+    private Address address;
 
 
-    public Request(UserAddress owner, int type){
-        this.owner = owner;
+    public Request(Address address, RequestType type){
+        this.address = address;
         this.type = type;
         this.approved = 0;
         this.active = 1;
@@ -46,11 +47,11 @@ public class Request {
         this.id = id;
     }
 
-    public int getType() {
+    public RequestType getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(RequestType type) {
         this.type = type;
     }
 
@@ -78,11 +79,11 @@ public class Request {
         this.active = active;
     }
 
-    public UserAddress getOwner() {
-        return owner;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setOwner(UserAddress owner) {
-        this.owner = owner;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

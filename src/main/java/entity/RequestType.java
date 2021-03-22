@@ -1,23 +1,25 @@
 package entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "request_types")
-public class RequestTypes {
+@Table(name = "request_type")
+public class RequestType {
     @Id
     private String id;
 
     @Column
     private String name;
 
-    public RequestTypes(String id, String name){
+    @OneToOne(mappedBy = "type")
+    private Request request;
+
+    public RequestType(String id, String name){
         this.id = id;
         this.name = name;
     }
+
+    public RequestType(){}
 
     public String getId() {
         return id;
@@ -33,5 +35,13 @@ public class RequestTypes {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Request getRequest() {
+        return request;
+    }
+
+    public void setRequest(Request request) {
+        this.request = request;
     }
 }

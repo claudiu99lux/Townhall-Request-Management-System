@@ -3,6 +3,7 @@ package entity;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "user")
@@ -26,17 +27,21 @@ public class User {
 	@Column
 	private String password;
 
-	@OneToMany(mappedBy = "user")
-	private List<UserAddress> userAddresses;
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+	private List<Address> addresses;
 
-	public User(String firstName, String lastName, String email, String password) {
+	public User(String firstName, String lastName, String email, String password, String CNP) {
+		this.id = UUID.randomUUID().toString();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
+		this.CNP = CNP;
 	}
 	
-	public User() {}
+	public User() {
+		this.id = UUID.randomUUID().toString();
+	}
 
 	public String getId() {
 		return id;
@@ -86,11 +91,11 @@ public class User {
 		this.password = password;
 	}
 
-	public List<UserAddress> getUserAddresses() {
-		return userAddresses;
+	public List<Address> getAddresses() {
+		return addresses;
 	}
 
-	public void setUserAddresses(List<UserAddress> userAddresses) {
-		this.userAddresses = userAddresses;
+	public void setAddresses(List<Address> addresses) {
+		this.addresses = addresses;
 	}
 }
