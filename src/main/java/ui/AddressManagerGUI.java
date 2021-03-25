@@ -1,6 +1,6 @@
 package ui;
 
-import controller.Controller;
+import controller.AddressManagerController;
 import dto.AddressDto;
 
 import javax.swing.*;
@@ -19,8 +19,9 @@ public class AddressManagerGUI {
     JPanel buttonWrapperPanel;
     JScrollPane scrollPane;
     DefaultListModel<AddressDto> listModel;
+    Color buttonColor = new Color(150, 220, 255);
 
-    public AddressManagerGUI(Controller controller){
+    public AddressManagerGUI(AddressManagerController controller){
         frame = new JFrame("Manage addresses");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
@@ -45,6 +46,8 @@ public class AddressManagerGUI {
         newApartmentAddressButton = new JButton("Add new apartment");
         newHouseAddressButton.addActionListener(e->controller.openNewHouseAddressGUI());
         newApartmentAddressButton.addActionListener(e->controller.openNewApartmentAddressGUI());
+        newApartmentAddressButton.setBackground(buttonColor);
+        newHouseAddressButton.setBackground(buttonColor);
         buttonsPanel.add(newHouseAddressButton);
         buttonsPanel.add(newApartmentAddressButton);
 
@@ -52,6 +55,8 @@ public class AddressManagerGUI {
 
         deleteSelectedButton = new JButton("Delete selected address");
         deleteSelectedButton.addActionListener(e->controller.deleteSelectedAddress());
+        deleteSelectedButton.setBackground(new Color(203, 88, 88));
+        deleteSelectedButton.setForeground(new Color(255,255,255));
         buttonWrapperPanel.setLayout(new GridLayout(2,1,10,5));
         buttonWrapperPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
         buttonWrapperPanel.add(buttonsPanel);
@@ -83,4 +88,5 @@ public class AddressManagerGUI {
     public JList<AddressDto> getAddressList() {
         return addressList;
     }
+
 }

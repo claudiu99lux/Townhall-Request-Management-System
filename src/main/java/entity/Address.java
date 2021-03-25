@@ -28,6 +28,9 @@ public abstract class Address {
     @JoinColumn(name="owner_id")
     private User user;
 
+    @OneToMany(mappedBy = "owner_address")
+    private List<Request> requests;
+
     public Address(){}
 
     public Address(int buildingType, String street, String number){
@@ -75,6 +78,14 @@ public abstract class Address {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public List<Request> getRequests() {
+        return requests;
+    }
+
+    public void setRequests(List<Request> requests) {
+        this.requests = requests;
     }
 
     @Override

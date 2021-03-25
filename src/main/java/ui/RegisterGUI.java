@@ -1,6 +1,6 @@
 package ui;
 
-import controller.Controller;
+import controller.LandingController;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -25,8 +25,9 @@ public class RegisterGUI {
     private JTextField surnameField;
     private JTextField CNPField;
     private JButton registerButton;
+    Color buttonColor = new Color(17, 153, 17);
 
-    public RegisterGUI(Controller controller){
+    public RegisterGUI(LandingController controller){
         frame = new JFrame("Register");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
@@ -77,9 +78,12 @@ public class RegisterGUI {
         registerButton = new JButton("REGISTER");
         registerButton.setPreferredSize(new Dimension(150, 40));
         registerButton.addActionListener(e->controller.registerButtonPressed());
+        registerButton.setBackground(buttonColor);
+        registerButton.setForeground(new Color(255,255,255));
         buttonPanel = new JPanel();
         buttonPanel.setBorder(new EmptyBorder(10, 0, 10, 0));
         buttonPanel.add(registerButton);
+
 
         //######### Preparing frame ###########
         frame.add(titlePanel, BorderLayout.NORTH);

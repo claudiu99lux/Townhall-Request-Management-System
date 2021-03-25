@@ -1,6 +1,6 @@
 package ui;
 
-import controller.Controller;
+import controller.MainMenuController;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -17,8 +17,9 @@ public class ChangePasswordGUI {
     JLabel confirmPasswordFieldLabel;
     JLabel title;
     JButton changeButton;
+    Color buttonColor = new Color(17, 153, 17);
 
-    public ChangePasswordGUI(Controller controller){
+    public ChangePasswordGUI(MainMenuController controller){
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
@@ -46,6 +47,8 @@ public class ChangePasswordGUI {
         changeButton = new JButton("Change password");
         changeButton.setPreferredSize(new Dimension(150, 40));
         changeButton.addActionListener(e -> controller.changePasswordButtonPressed());
+        changeButton.setBackground(buttonColor);
+        changeButton.setForeground(new Color(255,255,255));
         changeButtonPanel = new JPanel();
         changeButtonPanel.setBorder(new EmptyBorder(10, 0, 10, 0));
         changeButtonPanel.add(changeButton);

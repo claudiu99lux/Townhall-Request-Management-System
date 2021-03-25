@@ -11,6 +11,7 @@ public class SecureUserDto {
     private String CNP;
     private String email;
     private List<Address> addresses;
+    private int role;
 
     public SecureUserDto() {
     }
@@ -61,5 +62,13 @@ public class SecureUserDto {
 
     public void setAddresses(List<Address> addresses) {
         this.addresses = addresses;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
     }
 }

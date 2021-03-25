@@ -1,6 +1,6 @@
 package ui;
 
-import controller.Controller;
+import controller.AddressManagerController;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -21,8 +21,9 @@ public class NewApartmentGUI {
     JPanel buttonPanel;
     JPanel titlePanel;
     JPanel formPanel;
+    Color buttonColor = new Color(114, 255, 114);
 
-    public NewApartmentGUI(Controller controller){
+    public NewApartmentGUI(AddressManagerController controller){
         frame = new JFrame("Add new apartment");
         //frame.setLayout(new GridLayout(3,1,10,0));
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -64,6 +65,7 @@ public class NewApartmentGUI {
         addApartmentButton = new JButton("Add apartment");
         addApartmentButton.setPreferredSize(new Dimension(150, 40));
         addApartmentButton.addActionListener(e -> controller.addNewApartment());
+        addApartmentButton.setBackground(buttonColor);
         buttonPanel = new JPanel();
         buttonPanel.setBorder(new EmptyBorder(10, 0, 10, 0));
         buttonPanel.add(addApartmentButton);

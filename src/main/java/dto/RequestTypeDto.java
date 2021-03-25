@@ -1,26 +1,14 @@
-package entity;
+package dto;
 
-import javax.persistence.*;
+import entity.Request;
 import java.util.List;
 
-@Entity
-@Table(name = "request_type")
-public class RequestType {
-    @Id
+public class RequestTypeDto {
     private String id;
-
-    @Column
     private String name;
-
-    @OneToMany(mappedBy = "type")
     private List<Request> requests;
 
-    public RequestType(String id, String name){
-        this.id = id;
-        this.name = name;
-    }
-
-    public RequestType(){}
+    public RequestTypeDto(){}
 
     public String getId() {
         return id;
@@ -44,5 +32,10 @@ public class RequestType {
 
     public void setRequests(List<Request> requests) {
         this.requests = requests;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }

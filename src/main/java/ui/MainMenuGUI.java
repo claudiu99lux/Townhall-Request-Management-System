@@ -1,9 +1,8 @@
 package ui;
 
-import controller.Controller;
+import controller.MainMenuController;
 
 import javax.swing.*;
-import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
@@ -15,8 +14,9 @@ public class MainMenuGUI {
     private JButton changePasswordButton;
     private JButton manageAddressesButton;
     private JButton manageRequestsButton;
+    Color buttonColor = new Color(150, 220, 255);
 
-    public MainMenuGUI(Controller controller){
+    public MainMenuGUI(MainMenuController controller){
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -37,6 +37,10 @@ public class MainMenuGUI {
         manageAddressesButton = new JButton("Manage Addresses");
         manageAddressesButton.addActionListener(e -> controller.openManageAddressesPage());
         manageRequestsButton = new JButton("Manage Requests");
+        manageRequestsButton.addActionListener(e->controller.openManageRequestsPage());
+        changePasswordButton.setBackground(buttonColor);
+        manageAddressesButton.setBackground(buttonColor);
+        manageRequestsButton.setBackground(buttonColor);
 
         buttonPanel.add(changePasswordButton);
         buttonPanel.add(manageAddressesButton);

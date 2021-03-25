@@ -2,6 +2,7 @@ package entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Entity
 @Table(name = "request")
@@ -9,29 +10,30 @@ public class Request {
     @Id
     private String id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="request_type")
     private RequestType type;
 
     @Column
-    private int approved;
-
-    @Column
-    private int active;
+    private int approved; //0 = pending, 1=approved, 2=declined
 
     @Column
     private LocalDate date;
 
     @ManyToOne
     @JoinColumn(name = "address_id")
-    private Address address;
+    private Address owner_address;
+
+    @Column
+    private String content;
 
 
     public Request(Address address, RequestType type){
-        this.address = address;
+        this.id = UUID.randomUUID().toString();
+        this.owner_address = address;
+        this.date = LocalDate.now();
         this.type = type;
         this.approved = 0;
-        this.active = 1;
         this.date = LocalDate.now();
     }
 
@@ -71,19 +73,19 @@ public class Request {
         this.date = date;
     }
 
-    public int getActive() {
-        return active;
+    public Address getOwner_address() {
+        return owner_address;
     }
 
-    public void setActive(int active) {
-        this.active = active;
+    public void setOwner_address(Address address) {
+        this.owner_address = address;
     }
 
-    public Address getAddress() {
-        return address;
+    public String getContent() {
+        return content;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setContent(String content) {
+        this.content = content;
     }
 }

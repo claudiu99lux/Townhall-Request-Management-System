@@ -27,6 +27,9 @@ public class User {
 	@Column
 	private String password;
 
+	@Column
+	private int role; //1=user, 2=admin
+
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
 	private List<Address> addresses;
 
@@ -97,5 +100,13 @@ public class User {
 
 	public void setAddresses(List<Address> addresses) {
 		this.addresses = addresses;
+	}
+
+	public int getRole() {
+		return role;
+	}
+
+	public void setRole(int role) {
+		this.role = role;
 	}
 }

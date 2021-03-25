@@ -14,9 +14,11 @@ public class UserDto {
     private String email;
     private String password;
     private List<Address> addresses;
+    private int role;
 
     public UserDto() {
         this.id = UUID.randomUUID().toString();
+        this.role = 1;
     }
 
     public UserDto(String firstName, String lastName, String email, String password, String CNP){
@@ -82,5 +84,13 @@ public class UserDto {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
     }
 }

@@ -12,9 +12,10 @@ public class LandingGUI {
     private JButton loginButton;
     private JButton registerButton;
     private JLabel landingMessage;
+    Color buttonColor = new Color(150, 220, 255);
 
 
-    public LandingGUI(Controller controller){
+    public LandingGUI(LandingController controller){
         frame = new JFrame("Primăria Cluj-Napoca");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -36,6 +37,8 @@ public class LandingGUI {
         buttonPanel.add(loginButton);
         buttonPanel.add(registerButton);
 
+        loginButton.setBackground(buttonColor);
+        registerButton.setBackground(buttonColor);
 
         frame.add(labelPanel, BorderLayout.NORTH);
         frame.add(buttonPanel, BorderLayout.CENTER);

@@ -1,6 +1,6 @@
 package ui;
 
-import controller.Controller;
+import controller.LandingController;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -17,8 +17,9 @@ public class LoginGUI {
     private JTextField emailField;
     private JTextField passwordField;
     private JButton loginButton;
+    Color buttonColor = new Color(17, 153, 17);
 
-    public LoginGUI(Controller controller){
+    public LoginGUI(LandingController controller){
         frame = new JFrame("Login");
         frame.setLayout(new GridLayout(3,1,10,0));
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -50,6 +51,8 @@ public class LoginGUI {
         loginButton = new JButton("LOGIN");
         loginButton.setPreferredSize(new Dimension(150, 40));
         loginButton.addActionListener(e -> controller.loginButtonPressed());
+        loginButton.setBackground(buttonColor);
+        loginButton.setForeground(new Color(255,255,255));
         buttonPanel = new JPanel();
         buttonPanel.setBorder(new EmptyBorder(10, 0, 10, 0));
         buttonPanel.add(loginButton);

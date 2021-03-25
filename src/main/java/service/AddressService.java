@@ -49,4 +49,8 @@ public class AddressService {
         addressRepo.deleteAddress(a);
     }
 
+    public AddressDto getAddressById(String id){
+        return mapper.addressToAddressDto(addressRepo.findAddressById(id));
+    }
+
 }

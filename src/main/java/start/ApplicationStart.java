@@ -1,32 +1,20 @@
 package start;
 
-import controller.Controller;
-import dto.SecureUserDto;
-import dto.UserDto;
-import entity.*;
-import repository.AddressRepo;
-import repository.UserRepo;
-import service.UserService;
-
-import java.util.List;
+import controller.LandingController;
 
 
 public class ApplicationStart {
 
     public static void main(String[] args) {
 
-
-        UserRepo ur = new UserRepo();
-        AddressRepo ar = new AddressRepo();
+        LandingController c = new LandingController();
         /*
-        User user = new User();
-        user.setId(UUID.randomUUID().toString());
-        user.setName("Ana");
-        ur.insertNewUser(user);
-         */
+            RequestService rs = new RequestService();
+            List<RequestDto> requestDtos = rs.getAllRequests();
+            System.out.println(requestDtos.size());
 
-        Controller c = new Controller();
-
-
+        RequestService r = new RequestService();
+        System.out.println(r.countCurrentYearRequestsByAddressAndType("93753e14-95a7-4603-94d2-65b029173968", "1"));
+        */
     }
 }
