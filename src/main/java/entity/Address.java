@@ -1,5 +1,7 @@
 package entity;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +30,7 @@ public abstract class Address {
     @JoinColumn(name="owner_id")
     private User user;
 
-    @OneToMany(mappedBy = "owner_address")
+    @OneToMany(mappedBy = "owner_address", orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Request> requests;
 
     public Address(){}

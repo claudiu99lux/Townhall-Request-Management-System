@@ -4,9 +4,11 @@ package service;
 import dto.AddressDto;
 import dto.SecureUserDto;
 import entity.Address;
+import entity.Request;
 import entity.User;
 import mapper.AddressMapper;
 import repository.AddressRepo;
+import repository.RequestRepo;
 import repository.UserRepo;
 import validator.AddressValidator;
 
@@ -15,6 +17,7 @@ import java.util.List;
 
 public class AddressService {
     AddressRepo addressRepo;
+    RequestRepo requestRepo;
     UserRepo userRepo;
     AddressValidator addressValidator;
     AddressMapper mapper;
@@ -22,6 +25,7 @@ public class AddressService {
     public AddressService(){
         addressRepo = new AddressRepo();
         userRepo = new UserRepo();
+        requestRepo = new RequestRepo();
         mapper = new AddressMapper();
         addressValidator = new AddressValidator();
     }
@@ -44,8 +48,11 @@ public class AddressService {
         userRepo.updateUser(u);
     }
 
-    public void deleteAddress(AddressDto adddress){
-        Address a = mapper.addressDtoToAddress(adddress);
+    public void deleteAddress(AddressDto address){
+        Address a = addressRepo.findAddressById(address.getId());
+        for(Request r : a.getRequests()){
+            requestRepo.deleteRequest(r);
+        }
         addressRepo.deleteAddress(a);
     }
 

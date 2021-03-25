@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="78b75246-55ae-4a59-b278-8f2e964ffc0a" name="Default Changelist" comment="First commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Queries/RequestQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Queries/RequestQueries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AdminRequestManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AdminRequestManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/filterListeners/FilterByTypeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/filterListeners/FilterByTypeListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/RequestRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/RequestRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/RequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/RequestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/AddressService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +93,7 @@
       <workItem from="1616581233580" duration="13110000" />
       <workItem from="1616653214856" duration="3152000" />
       <workItem from="1616657508704" duration="12767000" />
-      <workItem from="1616670517560" duration="2162000" />
+      <workItem from="1616670517560" duration="4535000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1616233218083</created>
