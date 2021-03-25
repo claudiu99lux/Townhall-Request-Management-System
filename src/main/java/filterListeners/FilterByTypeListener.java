@@ -11,7 +11,11 @@ public class FilterByTypeListener implements ListSelectionListener {
 
     @Override
     public void valueChanged(ListSelectionEvent e) {
-
+        ListSelectionModel lsm = (ListSelectionModel)e.getSource();
+        if(!lsm.isSelectionEmpty()){
+            int index = lsm.getMinSelectionIndex();
+            controller.filterByType(index);
+        }
     }
 
     public FilterByTypeListener(AdminRequestManagerController controller){

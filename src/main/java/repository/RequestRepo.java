@@ -86,4 +86,15 @@ public class RequestRepo {
         em.close();
         return foundRequests;
     }
+
+    public List<Request> findRequestsByType(String typeID){
+        EntityManager em = entityManagerFactory.createEntityManager();
+        em.getTransaction().begin();
+        TypedQuery<Request> query = em.createQuery(RequestQueries.FIND_REQUESTS_BY_TYPE, Request.class);
+        query.setParameter("typeID", typeID);
+        List<Request> foundRequests = query.getResultList();
+        em.getTransaction().commit();
+        em.close();
+        return foundRequests;
+    }
 }

@@ -78,6 +78,19 @@ public class AdminRequestManagerController {
         }
     }
 
+    public void filterByType(int selectedTypeIndex){
+        filterPanel.getDateList().clearSelection();
+        List<RequestTypeDto> types = requestTypeService.getAllRequestTypes();
+        RequestTypeDto selectedType = types.get(selectedTypeIndex);
+        List<RequestDto> requests = requestService.getRequestsByTypeID(selectedType.getId());
+        DefaultTableModel tableModel = adminRequestManagerGUI.getTableModel();
+        for(int i=tableModel.getRowCount()-1; i>=0; i--)
+            tableModel.removeRow(i);
+        for(RequestDto r : requests){
+            tableModel.addRow(new Object[] {r.getOwner_address().getUser().getId(), r.getOwner_address().getUser().getFirstName(), r.getOwner_address().getUser().getLastName(), r.getContentPreview(), r.getType().getName(), r.getFormattedDate(), r.getOwner_address().toString(), r.getStatus()});
+        }
+    }
+
     public DefaultTableModel initRequestTableModel(){
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.addColumn("User ID");

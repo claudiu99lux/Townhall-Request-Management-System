@@ -93,9 +93,17 @@ public class RequestService {
             dates.add(r.getDate());
         return dates;
     }
-
     public List<RequestDto> getRequestsByDate(LocalDate date){
         List<Request> found = requestRepo.findRequestsByDate(date);
+        List<RequestDto> requests = new ArrayList<RequestDto>();
+        for(Request r : found){
+            requests.add(requestMapper.requestToDto(r));
+        }
+        return requests;
+    }
+
+    public List<RequestDto> getRequestsByTypeID(String typeID){
+        List<Request> found = requestRepo.findRequestsByType(typeID);
         List<RequestDto> requests = new ArrayList<RequestDto>();
         for(Request r : found){
             requests.add(requestMapper.requestToDto(r));
