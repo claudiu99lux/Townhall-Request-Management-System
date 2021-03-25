@@ -18,6 +18,7 @@ public class LandingController {
     private RegisterGUI register;
     private UserService userService;
     private MainMenuController mainMenuController;
+    private AdminMenuController adminMenuController;
 
     public LandingController(){
         userService = new UserService();
@@ -44,6 +45,8 @@ public class LandingController {
                 currentUser = userService.loginUser(enteredEmail, enteredPassword);
                 if(currentUser.getRole()==1)
                     mainMenuController = new MainMenuController(currentUser);
+                else
+                    adminMenuController = new AdminMenuController(currentUser);
                 frame.dispose();
                 landing.getFrame().dispose();
             }catch(Exception e){

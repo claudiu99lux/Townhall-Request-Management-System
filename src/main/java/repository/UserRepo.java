@@ -1,10 +1,10 @@
 package repository;
 
 import Queries.UserQueries;
-import entity.Address;
 import entity.User;
 
 import javax.persistence.*;
+import java.util.List;
 
 public class UserRepo {
 	
@@ -59,5 +59,15 @@ public class UserRepo {
 		}
 		em.close();
 		return user;
+	}
+
+	public List<User> findAllUsers(){
+		EntityManager em = entityManagerFactory.createEntityManager();
+		em.getTransaction().begin();
+		TypedQuery<User> query=em.createQuery(UserQueries.FIND_ALL_USERS,User.class);
+		List<User> foundUsers = query.getResultList();;
+		em.getTransaction().commit();
+		em.close();
+		return foundUsers;
 	}
 }

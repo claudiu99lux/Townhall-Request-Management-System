@@ -8,6 +8,9 @@ import mapper.UserMapper;
 import repository.UserRepo;
 import validator.UserValidator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserService {
     UserRepo userRepo;
     UserValidator userValidator;
@@ -39,5 +42,14 @@ public class UserService {
         User updatedUser = mapper.secureUserDtoToEntity(user);
         updatedUser.setPassword(newPassword);
         userRepo.updateUser(updatedUser);
+    }
+
+    public List<SecureUserDto> getAllUsers(){
+        List<User> foundUsers = userRepo.findAllUsers();
+        List<SecureUserDto> userDtoList = new ArrayList<SecureUserDto>();
+        for(User u : foundUsers){
+            userDtoList.add(mapper.entityToSecureUserDto(u));
+        }
+        return userDtoList;
     }
 }

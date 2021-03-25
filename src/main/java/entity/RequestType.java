@@ -12,7 +12,7 @@ public class RequestType {
     @Column
     private String name;
 
-    @OneToMany(mappedBy = "type")
+    @OneToMany(mappedBy = "type", cascade = CascadeType.ALL)
     private List<Request> requests;
 
     public RequestType(String id, String name){

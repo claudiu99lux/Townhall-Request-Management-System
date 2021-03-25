@@ -24,6 +24,8 @@ public class RequestMapper {
         r.setDate(rd.getDate());
         r.setApproved(rd.getApproved());
         r.setContent(rd.getContent());
+        r.setType(rd.getType());
+        r.setOwner_address(rd.getOwner_address());
         return r;
     }
 }

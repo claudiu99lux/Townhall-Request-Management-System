@@ -5,48 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78b75246-55ae-4a59-b278-8f2e964ffc0a" name="Default Changelist" comment="First commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Queries/RequestQueries.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Queries/RequestTypeQueries.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/AddressManagerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/LandingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/MainMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/RequestManagerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dto/RequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dto/RequestTypeDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/ConstraintExceptionMessages.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/RequestNotEditable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exception/TooManyRequestsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mapper/RequestMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mapper/RequestTypeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repository/RequestRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repository/RequestTypeRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/RequestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/RequestTypeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/EditRequestGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/NewRequestGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/RequestManagerGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/AdminMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/AdminRequestManagerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/filterListeners/FilterByDateListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/filterListeners/FilterByTypeListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/AdminMainMenuGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/AdminRequestManagerGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/DocumentManagerGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/FilterPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/UserListGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dto/SecureUserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dto/SecureUserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Queries/RequestQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Queries/RequestQueries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Queries/UserQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Queries/UserQueries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LandingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LandingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dto/RequestTypeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dto/RequestTypeDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Request.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/RequestType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/RequestType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exception/UserExceptionMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exception/UserExceptionMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/AddressService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exception/GenericExceptionMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exception/GenericExceptionMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mapper/RequestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mapper/RequestMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/RequestRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/RequestRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/UserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/RequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/RequestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/RequestTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/RequestTypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/start/ApplicationStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/start/ApplicationStart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/AddressManagerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/AddressManagerGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/ChangePasswordGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/ChangePasswordGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/LandingGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/LandingGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/LoginGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/MainMenuGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/MainMenuGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/NewApartmentGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/NewApartmentGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/NewHouseGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/NewHouseGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/RegisterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/RegisterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/validator/UserValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/validator/UserValidator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +113,8 @@
       <workItem from="1616502286287" duration="15120000" />
       <workItem from="1616581233580" duration="13110000" />
       <workItem from="1616653214856" duration="3152000" />
-      <workItem from="1616657508704" duration="400000" />
+      <workItem from="1616657508704" duration="12767000" />
+      <workItem from="1616670517560" duration="1107000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1616233218083</created>

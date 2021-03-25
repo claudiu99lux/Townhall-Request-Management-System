@@ -29,4 +29,14 @@ public class RequestTypeService {
     public RequestTypeDto getRequestTypeById(String id){
         return requestTypeMapper.requestTypeToDto(requestTypeRepo.findRequestTypeById(id));
     }
+
+    public void deleteRequestType(String id){
+        RequestType r = requestTypeRepo.findRequestTypeById(id);
+        requestTypeRepo.deleteRequestType(r);
+    }
+
+    public void addNewRequestType(RequestTypeDto dto){
+        RequestType requestType = requestTypeMapper.requestTypeDtoToRequestType(dto);
+        requestTypeRepo.insertRequestType(requestType);
+    }
 }

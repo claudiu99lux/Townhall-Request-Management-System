@@ -2,13 +2,16 @@ package dto;
 
 import entity.Request;
 import java.util.List;
+import java.util.UUID;
 
 public class RequestTypeDto {
     private String id;
     private String name;
     private List<Request> requests;
 
-    public RequestTypeDto(){}
+    public RequestTypeDto(){
+        this.id = UUID.randomUUID().toString();
+    }
 
     public String getId() {
         return id;

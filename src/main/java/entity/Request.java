@@ -2,6 +2,7 @@ package entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 @Entity
@@ -87,5 +88,10 @@ public class Request {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getFormattedDate(){
+        String formattedDate = date.format(DateTimeFormatter.ofPattern("dd-MMM-YYYY"));
+        return formattedDate;
     }
 }

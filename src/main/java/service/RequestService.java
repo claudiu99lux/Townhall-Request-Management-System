@@ -12,6 +12,8 @@ import repository.RequestTypeRepo;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class RequestService {
     private AddressService addressService;
@@ -64,6 +66,10 @@ public class RequestService {
         requestRepo.updateRequest(r);
     }
 
+    public void updateRequest(RequestDto request){
+        requestRepo.updateRequest(requestMapper.requestDtoToRequest(request));
+    }
+
     public void deleteRequest(RequestDto request){
         Request r = requestMapper.requestDtoToRequest(request);
         requestRepo.deleteRequest(r);
@@ -78,5 +84,22 @@ public class RequestService {
                 count++;
         }
         return count;
+    }
+
+    public Set<LocalDate> getRequestsDateSet(){
+        List<Request> requests = requestRepo.findAllRequests();
+        Set<LocalDate> dates = new TreeSet<LocalDate>();
+        for(Request r : requests)
+            dates.add(r.getDate());
+        return dates;
+    }
+
+    public List<RequestDto> getRequestsByDate(LocalDate date){
+        List<Request> found = requestRepo.findRequestsByDate(date);
+        List<RequestDto> requests = new ArrayList<RequestDto>();
+        for(Request r : found){
+            requests.add(requestMapper.requestToDto(r));
+        }
+        return requests;
     }
 }

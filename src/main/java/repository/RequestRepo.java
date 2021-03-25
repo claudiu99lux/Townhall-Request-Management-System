@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import java.time.LocalDate;
 import java.util.List;
 
 public class RequestRepo {
@@ -27,10 +28,8 @@ public class RequestRepo {
     public void deleteRequest(Request request) {
         EntityManager em = entityManagerFactory.createEntityManager();
         em.getTransaction().begin();
-        if(em.contains(request))
-            em.remove(request);
-        else
-            em.remove(em.merge(request));
+        Request r = em.find(Request.class, request.getId());
+        em.remove(r);
         em.getTransaction().commit();
         em.close();
     }
@@ -43,11 +42,23 @@ public class RequestRepo {
         em.close();
     }
 
+
     public List<Request> findRequestsByUserId(String user_id){
         EntityManager em = entityManagerFactory.createEntityManager();
         em.getTransaction().begin();
         TypedQuery<Request> query = em.createQuery(RequestQueries.FIND_REQUESTS_BY_USER_ID, Request.class);
         query.setParameter("id", user_id);
+        List<Request> foundRequests = query.getResultList();
+        em.getTransaction().commit();
+        em.close();
+        return foundRequests;
+    }
+
+    public List<Request> findRequestsByDate(LocalDate date){
+        EntityManager em = entityManagerFactory.createEntityManager();
+        em.getTransaction().begin();
+        TypedQuery<Request> query = em.createQuery(RequestQueries.FIND_REQUESTS_BY_DATE, Request.class);
+        query.setParameter("date", date);
         List<Request> foundRequests = query.getResultList();
         em.getTransaction().commit();
         em.close();
